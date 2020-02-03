@@ -5,7 +5,7 @@ class Upload extends CI_Controller {
         public function __construct()
         {
                 parent::__construct();
-                $this->load->helper(array('form', 'url'));
+                // $this->load->helper(array('form', 'url'));
                 $this->load->model('DropDown');
                 $this->load->database(); 
         }
@@ -27,6 +27,7 @@ class Upload extends CI_Controller {
                 $lstCat = $this->input->post('lstCat');
                 $pdate = $this->input->post('pdate');
                 $lstOp = $this->input->post('lstOp');
+
                 $cnumber = $this->input->post('cnumber');
                 $amount = $this->input->post('amount');
                 $payee = $this->input->post('payee');
@@ -47,7 +48,7 @@ class Upload extends CI_Controller {
                 else
                 {
                         $data = array('upload_data' => $this->upload->data());
-                        $this->DropDown->InsertRecord($lstCat,$pdate,$lstOp,$cnumber,$payee,$paddress,$amount,$desc,$appby,$issby,$Data);
+                        $this->DropDown->InsertRecord($lstCat,$pdate,$lstOp,$cnumber,$payee,$paddress,$amount,$desc,$appby,$issby,$data);
 
                         $this->load->view('upload_success', $data);
                 }

@@ -14,7 +14,7 @@
 			Select Category:
 		</td>
 		<td>
-			<select class="lstCat">
+			<select id="lstCat" name="lstCat">
     			<?php
     			foreach($groups as $cats)
     				{
@@ -37,7 +37,7 @@
 			Payment Method:
 		</td>
 		<td>
-			<select class="lstOp">
+			<select id="lstOp" name="lstOp">
 				<option value="Cash">Cash</option>
 				<option value="Cheque">Cheque</option>
 			</select>

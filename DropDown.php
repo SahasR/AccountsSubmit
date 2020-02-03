@@ -20,18 +20,20 @@ class DropDown extends CI_Model
         //tUserID will be fetched using a SESSION ID
         $UID = "XXX555XXX";
         //What is the category Image supposed to hold?
-        $Image = "Hello!";
+
 
         $dater = date("d/m/Y");
 
         $dataarray = $Data['upload_data'];   
-
+        // $Image = "Hello";
         $width = $dataarray['image_width'];
         $height = $dataarray['image_height'];
-        $imaget = $dataarray['image_type']; 
+        $imaget = $dataarray['image_type'];
+        $Image = $dataarray['file_name'];
+
         // What do we store in Category Image?
         $this->db->query("INSERT INTO tblTransactions (TransactionID, PaymentDate, tUserID, Image, ApprovalStatus, ImageType, Width, Height, Category, PaymentMethod, ChequeNum, Payee, PayeeAddress, Purpose, Amount, ApprovedBy, IssuedBy, PostDate)
-            VALUES ('$TCode','$ppdate','$UID','$Image','pending','$imaget','$width','$height','$plstCat','$plstOp','$pcnumber','$ppayee','$ppaddress','$pdesc','$pamount','$pappby','$pissby','$dater')");
+            VALUES ('$TCode','$ppdate','$UID','$Image','p','$imaget','$width','$height','$plstCat','$plstOp','$pcnumber','$ppayee','$ppaddress','$pdesc','$pamount','$pappby','$pissby',NOW())");
          
        
     }
